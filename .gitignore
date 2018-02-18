@@ -1,2 +1,5 @@
 #ignore *.pem private key
 *.pem
+
+#Vagrant files
+.Vagrant/

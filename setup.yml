@@ -4,12 +4,11 @@
 
   tasks:
     - name: setup private key
-      file:
-        src: 7c8ckey.pem
-        dest: /home/trentm-datacom.co.nz/.ssh/
+      copy:
+        src: guidkey.pem
+        dest: "/home/vagrant/.ssh/{{ GUID }}key.pem"
         mode: 0400
-        state: file
-        owner: trentm-datacom.co.nz
+        owner: vagrant
 
 ...
   
