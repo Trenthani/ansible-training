@@ -1,0 +1,14 @@
+---
+- hosts: ansible-host
+  become: true
+
+  tasks:
+    - name: setup private key
+      file:
+        src: 7c8ckey.pem
+        dest: /home/trentm-datacom.co.nz/.ssh/
+        mode: 0400
+        state: file
+
+...
+  

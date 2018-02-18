@@ -53,10 +53,10 @@ Vagrant.configure("2") do |config|
 
         if opts[:name] == "ansible-host"
           config.vm.provision :shell, path: "install_ansible.sh"
-          #config.vm.provision "ansible_local" do |ansible|
-            #ansible.verbose = "vv"
-            #ansible.playbook = "ultralight_prep.yml" 
-          #end    
+          config.vm.provision "ansible_local" do |ansible|
+            ansible.verbose = "vv"
+            ansible.playbook = "setup.yml" 
+          end    
             
           #config.vm.provision :shell, path: "ultralight_install.sh"
           # config.vm.provision "ansible_local" do |ansible|
