@@ -1,0 +1,36 @@
+---
+- hosts: all
+  become: true
+  vars:
+   git_path: "/home/vagrant/git/dao_ultralight_build"
+
+  tasks:
+  - name: install git
+    yum:
+      name: git
+      state: latest     
+   
+  - name: clear git repo
+    file:
+      path: "{{ git_path }}"
+      state: absent
+      
+  - name: create git directory
+    file:
+      path: "{{ git_path }}"
+      state: directory
+
+  - name: clone DAO ultralight build repo
+    git: 
+      repo: https://vagrant:2QkqxAX65-pVahQyfJom@git.myservice.datacom.co.nz/datacom-dao/dao_ultralight_build.git
+      dest: "{{ git_path }}"
+      version: Issue23
+      update: yes
+
+  # - name: vaultfile template
+  #   template:
+  #     src: bananas.j2
+  #     dest: "{{ git_path }}/bananas"
+
+  
+...
