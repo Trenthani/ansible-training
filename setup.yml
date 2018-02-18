@@ -9,6 +9,7 @@
         dest: /home/trentm-datacom.co.nz/.ssh/
         mode: 0400
         state: file
+        owner: trentm-datacom.co.nz
 
 ...
   
