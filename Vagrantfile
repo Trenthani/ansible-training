@@ -67,7 +67,7 @@ Vagrant.configure("2") do |config|
           #   ansible.galaxy_roles_path = "/home/vagrant/git/dao_ultralight_build/roles"
           #   ansible.inventory_path = "hosts.ini"
           
-        end
+        #end
         
       end
 		end
