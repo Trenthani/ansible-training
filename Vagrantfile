@@ -55,6 +55,7 @@ Vagrant.configure("2") do |config|
           config.vm.provision :shell, path: "install_ansible.sh"
           config.vm.provision "ansible_local" do |ansible|
             ansible.verbose = "vv"
+            ansible.extra_vars = "GUID=0fc7"
             ansible.playbook = "setup.yml" 
           end    
             
